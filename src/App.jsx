@@ -1,7 +1,13 @@
+import React from 'react';
+
+// Components
+import Home from './page/Home';
+
 function App() {
   return (
-    <div>
-    </div>
+    <>
+      <Home />
+    </>
   );
 }
 
