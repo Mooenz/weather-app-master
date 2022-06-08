@@ -7,12 +7,16 @@ const { primary, colorFont, colorFontDark } = theme.color;
 export const Container = styled.section`
   padding: 18px 12px;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   min-height: 800px;
   text-align: center;
   background: ${primary} url(${imgBg}) top 60px center no-repeat;
   background-size: 580px;
   background-blend-mode: soft-light;
+
+  @media screen and (min-width:840px){
+    width: 490px;
+  }
 `;
 
 export const ButtonsList = styled.div`
@@ -31,7 +35,7 @@ export const ImgContainer = styled.picture`
 `;
 
 export const WeatherToday = styled.section`
-  height: 100%;
+
 `;
 
 export const TempContainer = styled.div`

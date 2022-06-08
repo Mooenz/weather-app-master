@@ -1,7 +1,20 @@
 import React from 'react';
 
-const index = () => {
-  return <div>WeatherDayList</div>;
+// Components
+import WeatherItem from '../../components/WeatherItem';
+
+// Styles
+import { Content } from './styles';
+
+
+const index = ({ daily }) => {
+  return (
+    <Content>
+      {daily.map(({ id, ...props}, index) => (
+        <WeatherItem key={id} data={props} index={index}/>
+      ))}
+    </Content>
+  );
 };
 
 export default index;

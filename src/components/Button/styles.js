@@ -14,6 +14,7 @@ export const MainStyles = styled.button`
   font-family: 'Raleway', sans-serif;
   color: ${white};
   background-color: ${gray};
+  transition-duration: 0.5s;
   ${({ location }) =>
     location &&
     `
@@ -22,5 +23,9 @@ export const MainStyles = styled.button`
     border-radius: 50%;
     font-size: 22px;
     font-family: 'Material Icons';
+
+    &:active {
+    transform: scale(0.8);
+  }
   `};
 `;

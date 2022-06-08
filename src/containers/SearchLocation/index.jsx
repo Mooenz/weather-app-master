@@ -7,7 +7,7 @@ import InputSearch from '../../components/InputSearch';
 import { Container, IconClose, Searches, SearchCity } from './styles';
 
 const index = ({ isClose, handleClose, setCity }) => {
-  const [searches, setSearches] = useState(['Helsinki']);
+  const [searches, setSearches] = useState([]);
 
   const setNewCity = (id) => {
     setCity(searches[id]);
@@ -16,11 +16,11 @@ const index = ({ isClose, handleClose, setCity }) => {
 
   return (
     <Container isClose={isClose}>
-      <div>
-        <IconClose className="material-icons" onClick={handleClose}>
+      <IconClose>
+        <span className="material-icons" onClick={handleClose}>
           close
-        </IconClose>
-      </div>
+        </span>
+      </IconClose>
       <InputSearch
         searches={searches}
         setCity={setCity}

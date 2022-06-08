@@ -8,14 +8,25 @@ const index = ({ searches, setSearches, handleClose, setCity }) => {
 
   const handleSetCity = (event) => setNewCity(event.target.value);
 
-  const setSearch = () => {
+  const setSearch = (event) => {
+    // Cancel refresh
+    event.preventDefault();
+
+    // set city to citys searches
     setSearches(searches.concat(newCity));
+
+    // set search city
     setCity(newCity);
+
+    // hidden component
     handleClose();
+
+    // Clear input
+    setNewCity('');
   };
 
   return (
-    <SearchContainer>
+    <SearchContainer onSubmit={setSearch}>
       <Container>
         <Icon className="material-icons">search</Icon>
         <Search
@@ -25,7 +36,7 @@ const index = ({ searches, setSearches, handleClose, setCity }) => {
           onChange={handleSetCity}
         />
       </Container>
-      <Button onClick={setSearch}>Search</Button>
+      <Button>Search</Button>
     </SearchContainer>
   );
 };

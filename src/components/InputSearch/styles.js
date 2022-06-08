@@ -4,7 +4,7 @@ import theme from '../../constants/theme';
 const { primary, purple, white } = theme.color;
 const { relaway } = theme.font;
 
-export const SearchContainer = styled.div`
+export const SearchContainer = styled.form`
   margin-top: 30px;
   margin-bottom: 19px;
   display: flex;

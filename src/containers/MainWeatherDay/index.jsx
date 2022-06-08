@@ -21,13 +21,12 @@ import {
 const images = require.context('../../assets/img', true);
 
 const index = ({ todayData, handleClose }) => {
-  const { temp, name, weather } = todayData;
+  const { temp, name, weather, date } = todayData;
 
   // Get today
-  const today = new Date().toDateString().split(' ');
-  const day = today[0];
-  const numberDay = today[2];
-  const month = today[1];
+  const today = new Date(date * 1000).toDateString().split(' ');
+
+  const [day, month, numberDay] = today
 
   return (
     <>
@@ -37,8 +36,8 @@ const index = ({ todayData, handleClose }) => {
           <Button body="my_location" location />
         </ButtonsList>
         <WeatherToday>
-          <ImgContainer > 
-          <img src={images(`./${weather}.png`)} alt={weather} />
+          <ImgContainer>
+            <img src={images(`./${weather}.png`)} alt={weather} />
           </ImgContainer>
           <TempContainer>
             <Temp>{temp}</Temp>

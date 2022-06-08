@@ -19,13 +19,14 @@ export const Container = styled.section`
       : `
     transform: translateX(0);
     `}
-    transition: transform 0.5s;
+  transition: transform 0.5s;
 `;
 
-export const IconClose = styled.span`
-  display: block;
+export const IconClose = styled.div`
   text-align: end;
-  cursor: pointer;
+  span {
+    cursor: pointer;
+  }
 `;
 
 export const Searches = styled.ul`
